@@ -1,6 +1,6 @@
 # Tossi for Rust
 
-이 프로젝트는 임의의 단어와 그 단어에 붙일 조사를 입력하면, 입력한 조사를 같이 입력한 단어에 자연스러운 형태로 바꿔 반환해 주는 CLI(Command-Line Interface, 이하 커맨드 라인 인터페이스)에서 작동하는 앱을 만드는 프로젝트입니다. 이 프로젝트는 [TossiCat core](https://github.com/tossicat/tossicat-core)을 이용하고 이용해 대부분의 기능을 가져다 사용하고 있습니다. 또한 코드는 Rust로 작성하고 있습니다. 자세한 내용은 아래를 내용을 참고하세요.
+이 프로젝트는 임의의 단어와 그 단어에 붙일 조사를 입력하면, 입력한 조사를 같이 입력한 단어에 자연스러운 형태로 바꿔 반환해 주는 CLI(Command-Line Interface, 이하 커맨드 라인 인터페이스)에서 작동하는 앱을 만드는 프로젝트입니다. 코드는 Rust로 작성하고 있으며, [TossiCat core](https://github.com/tossicat/tossicat-core)을 라이브러리로 이용해 대부분의 중요 기능을 가져다 사용하고 있습니다. 자세한 내용은 아래를 내용을 참고하세요.
 
 ## 컴파일 하기
 
