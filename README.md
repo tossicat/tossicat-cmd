@@ -4,34 +4,50 @@
 
 ## 사용법
 
+### 단어에 토시 적용
+
 ```console
-$ tossi -w 나뭇가지 -t 을
-나뭇가지를
+$ tossi -w 사과 -t 을
+사과를
 
 $ tossi -w 집 -t 으로
 집으로
 
 $ tossi -w 테스트 -t 은
 테스트는
+```
 
-$ tossi -w 나뭇가지 -t 을 -o
+변환된 토시만 출력:
+
+```console
+$ tossi -w 사과 -t 을 -o
 를
 ```
 
-도움말 보기:
+### 문장 변환
+
+`{단어, 토시}` 형식이 포함된 문장을 한 번에 변환할 수 있습니다.
+
+```console
+$ tossi -s "{철수, 은} {영희, 과} {밥, 를} 먹습니다."
+철수는 영희와 밥을 먹습니다.
+```
+
+### 도움말 보기
 
 ```console
 $ tossi --help
 입력한 단어에 맞게 토시(조사)를 변환해주는 프로그램
 
-Usage: tossi [OPTIONS] --word <WORD> --tossi <TOSSI>
+Usage: tossi [OPTIONS]
 
 Options:
-  -w, --word <WORD>    토시를 적용하고 싶은 단어
-  -t, --tossi <TOSSI>  입력한 단어에 적용할 토시
-  -o, --only-tossi     변환된 토시만 출력
-  -h, --help           Print help
-  -V, --version        Print version
+  -w, --word <WORD>          토시를 적용하고 싶은 단어
+  -t, --tossi <TOSSI>        입력한 단어에 적용할 토시
+  -o, --only-tossi           변환된 토시만 출력
+  -s, --sentence <SENTENCE>  토시가 포함된 문장을 변환 (예: "{철수, 은} {밥, 를} 먹습니다.")
+  -h, --help                 Print help
+  -V, --version              Print version
 ```
 
 ## 빌드하기

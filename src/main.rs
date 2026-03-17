@@ -21,7 +21,28 @@ struct Cli {
 }
 
 fn main() {
-    let cli = Cli::parse();
+    let cli = match Cli::try_parse() {
+        Ok(cli) => cli,
+        Err(e) => {
+            match e.kind() {
+                clap::error::ErrorKind::DisplayHelp
+                | clap::error::ErrorKind::DisplayVersion => {
+                    e.exit();
+                }
+                clap::error::ErrorKind::ArgumentConflict => {
+                    eprintln!("오류: '-w/-t' 옵션과 '-s' 옵션은 동시에 사용할 수 없습니다.");
+                }
+                clap::error::ErrorKind::MissingRequiredArgument => {
+                    eprintln!("오류: 필수 옵션이 빠져 있습니다. '-w/-t' 또는 '-s' 옵션을 지정해주세요.");
+                }
+                _ => {
+                    eprintln!("오류: 잘못된 입력입니다.");
+                }
+            }
+            eprintln!("사용법을 확인하려면 --help를 입력하세요.");
+            std::process::exit(1);
+        }
+    };
 
     if let Some(sentence) = &cli.sentence {
         match tossicat::modify_sentence(sentence) {
