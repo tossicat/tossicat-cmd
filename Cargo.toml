@@ -8,5 +8,5 @@ license = "MIT"
 
 [dependencies]
 
-tossicat = "0.4.3"
-clap = { version = "4.0", features = ["derive"] }
+tossicat = "0.8"
+clap = { version = "4", features = ["derive"] }
